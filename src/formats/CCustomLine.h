@@ -1,0 +1,14 @@
+//
+// Created by Peperodz on 6. 10. 2023.
+//
+
+#ifndef MOCKDATAGENERATOR_CCUSTOMLINE_H
+#define MOCKDATAGENERATOR_CCUSTOMLINE_H
+
+
+class CCustomLine {
+
+};
+
+
+#endif //MOCKDATAGENERATOR_CCUSTOMLINE_H

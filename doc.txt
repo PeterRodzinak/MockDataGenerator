@@ -1,0 +1,11 @@
+Format
+*custom*
+- line prefix + line postfix
+- length of entries
+- separated value [separator sequence]
+
+Mock types
+- integer
+- floating point [nominal:decimal]
+- string [alpha/alphanum/fi]
+- bool
