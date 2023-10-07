@@ -3,3 +3,7 @@
 //
 
 #include "CConstantGenerator.h"
+
+std::string CConstantGenerator::generate() {
+    return generatedConstant;
+}

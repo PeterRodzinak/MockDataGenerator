@@ -2,11 +2,12 @@
 
 #include <string>
 #include <random>
+#include <vector>
 
 class CGenerator {
 protected:
     bool repeat;
 public:
-    explicit CGenerator(bool r) : repeat(r){};
-    virtual std::string generate() const = 0;
+    static std::vector<std::string> parseArgs(const std::string & args);
+    virtual std::string generate() = 0;
 };

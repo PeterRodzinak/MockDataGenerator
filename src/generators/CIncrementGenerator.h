@@ -5,6 +5,8 @@
 class CIncrementGenerator : public CGenerator{
 private:
     int current;
+    int increment;
 public:
-    std::string generate() const override;
+    CIncrementGenerator(std::string & args);
+    std::string generate() override;
 };

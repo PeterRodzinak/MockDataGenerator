@@ -5,6 +5,6 @@
 class CConstantGenerator : public CGenerator{
     const std::string generatedConstant;
 private:
-    explicit CConstantGenerator(std::string & c) : CGenerator(false), generatedConstant(std::move(c)) {}
-    std::string generate() const override;
+    explicit CConstantGenerator(std::string & c) : generatedConstant(std::move(c)) {repeat = false;}
+    std::string generate() override;
 };
