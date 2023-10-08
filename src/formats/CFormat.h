@@ -1,14 +1,10 @@
-//
-// Created by Peperodz on 6. 10. 2023.
-//
+#pragma once
 
-#ifndef MOCKDATAGENERATOR_CFORMAT_H
-#define MOCKDATAGENERATOR_CFORMAT_H
-
+#include "../generators/CGenerator.h"
+#include <string>
+#include <memory>
 
 class CFormat {
-
+public:
+    virtual std::string generateUnit() = 0;
 };
-
-
-#endif //MOCKDATAGENERATOR_CFORMAT_H

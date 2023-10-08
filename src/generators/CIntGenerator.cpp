@@ -13,12 +13,12 @@ CIntGenerator::CIntGenerator(std::string &args) {
     repeat = true;
     std::vector<std::string> argVec = parseArgs(args);
     for (auto & arg : argVec) {
-        if (arg.find("max=" == 0)) {
+        if (arg.find("max=")  == 0) {
             std::size_t numberCharSize = arg.size() - 4;
             if (numberCharSize == 0)
                 throw std::runtime_error("StringGenerator: Invalid limit");
             maximumInt = std::stoi(arg.substr(4, numberCharSize));
-        } else if (arg.find("min=" == 0)) {
+        } else if (arg.find("min=") == 0) {
             std::size_t numberCharSize = arg.size() - 4;
             if (numberCharSize == 0)
                 throw std::runtime_error("StringGenerator: Invalid limit");
