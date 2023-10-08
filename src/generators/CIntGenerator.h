@@ -6,10 +6,10 @@
 
 class CIntGenerator : public CGenerator{
 private:
-    std::unordered_set<int> usedNumbers;
+    std::unordered_set<long long int> usedNumbers;
     long long int minimalInt;
     long long int maximumInt;
 public:
-    CIntGenerator(std::string & args);
+    explicit CIntGenerator(std::string & args);
     std::string generate() override;
 };

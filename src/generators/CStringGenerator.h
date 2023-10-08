@@ -2,16 +2,15 @@
 
 #include "CGenerator.h"
 #include <unordered_set>
+#include <unordered_map>
 
 class CStringGenerator : public CGenerator{
 private:
     std::unordered_set<std::string> usedStrings;
     std::size_t length;
-    int writingState;
-    std::string alpha = "abcdefghijklmnopqrstuvwxyz";
-    std::string alphaNum = "0123456789abcdefghijklmnopqrstuvwxyz";
-    std::string fullInterpunction = "0123456789abcdefghijklmnopqrstuvwxyz+-*/\\?!@#$%^&*(),.:;|";
+    std::string * usedSet;
+    std::unordered_map<std::string, std::string> setTable;
 public:
-    CStringGenerator(std::string & args);
+    explicit CStringGenerator(std::string & args);
     std::string generate() override;
 };
