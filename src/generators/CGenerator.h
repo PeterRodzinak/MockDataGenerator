@@ -8,6 +8,7 @@ class CGenerator {
 protected:
     bool repeat;
 public:
+    virtual ~CGenerator() = default;
     static std::vector<std::string> parseArgs(const std::string & args);
     virtual std::string generate() = 0;
 };

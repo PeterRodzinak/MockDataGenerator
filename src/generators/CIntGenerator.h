@@ -10,6 +10,6 @@ private:
     long long int minimalInt;
     long long int maximumInt;
 public:
-    explicit CIntGenerator(std::string & args);
+    explicit CIntGenerator(const std::string & args);
     std::string generate() override;
 };

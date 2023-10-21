@@ -11,6 +11,6 @@ private:
     std::string * usedSet;
     std::unordered_map<std::string, std::string> setTable;
 public:
-    explicit CStringGenerator(std::string & args);
+    explicit CStringGenerator(const std::string & args);
     std::string generate() override;
 };

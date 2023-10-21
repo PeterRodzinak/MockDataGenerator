@@ -11,11 +11,11 @@ private:
 
     std::pair<std::string, std::string> splitGeneratorPrompt(const std::string & generatorPrompt) const;
 
-    std::unique_ptr<CGenerator> createBoolGenerator(const std::string & spec) const;
-    std::unique_ptr<CGenerator> createConstantGenerator(const std::string & spec) const;
-    std::unique_ptr<CGenerator> createIncrementGenerator(const std::string & spec) const;
-    std::unique_ptr<CGenerator> createIntGenerator(const std::string & spec) const;
-    std::unique_ptr<CGenerator> createStringGenerator(const std::string & spec) const;
+    static std::unique_ptr<CGenerator> createBoolGenerator(const std::string & spec);
+    static std::unique_ptr<CGenerator> createConstantGenerator(const std::string & spec);
+    static std::unique_ptr<CGenerator> createIncrementGenerator(const std::string & spec);
+    static std::unique_ptr<CGenerator> createIntGenerator(const std::string & spec);
+    static std::unique_ptr<CGenerator> createStringGenerator(const std::string & spec);
 public:
     CGeneratorFactory();
     std::unique_ptr<CGenerator> createGenerator(const std::string & generatorPrompt) const;

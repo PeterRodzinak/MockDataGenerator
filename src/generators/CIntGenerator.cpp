@@ -7,7 +7,7 @@
 #include <climits>
 #include <stdexcept>
 
-CIntGenerator::CIntGenerator(std::string &args) {
+CIntGenerator::CIntGenerator(const std::string &args) {
     maximumInt = LLONG_MAX;
     minimalInt = LLONG_MIN;
     repeat = true;

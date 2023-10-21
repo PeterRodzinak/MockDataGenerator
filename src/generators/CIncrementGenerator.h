@@ -7,6 +7,6 @@ private:
     int current;
     int increment;
 public:
-    CIncrementGenerator(std::string & args);
+    CIncrementGenerator(const std::string & args);
     std::string generate() override;
 };

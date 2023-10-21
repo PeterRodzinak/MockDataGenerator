@@ -8,6 +8,9 @@ private:
 
     std::vector<std::string> splitGeneratorLine(const std::string & generatorLine) const;
 public:
-    CCustomLine(const std::string & generatorLine);
+    explicit CCustomLine() = default;
+
+    void promptGeneratorInput() override;
+    void getGeneratorInput(const std::string & formatPrompt) override;
     std::string generateUnit() override;
 };

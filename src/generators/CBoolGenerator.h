@@ -4,6 +4,6 @@
 
 class CBoolGenerator : public CGenerator{
 public:
-    CBoolGenerator(std::string & args);
+    CBoolGenerator(const std::string & args);
     std::string generate() override;
 };

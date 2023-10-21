@@ -6,7 +6,7 @@
 
 #include <stdexcept>
 
-CIncrementGenerator::CIncrementGenerator(std::string &args) {
+CIncrementGenerator::CIncrementGenerator(const std::string &args) {
     current = 0;
     increment = 1;
     std::vector<std::string> argVec = parseArgs(args);

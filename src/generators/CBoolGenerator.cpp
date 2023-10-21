@@ -6,7 +6,7 @@
 
 #include <stdexcept>
 
-CBoolGenerator::CBoolGenerator(std::string &args) {
+CBoolGenerator::CBoolGenerator(const std::string &args) {
     if (!args.empty())
         throw std::runtime_error("BoolGen: too many args");
     repeat = false;

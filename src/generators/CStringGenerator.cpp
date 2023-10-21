@@ -6,7 +6,7 @@
 
 #include <stdexcept>
 
-CStringGenerator::CStringGenerator(std::string &args) {
+CStringGenerator::CStringGenerator(const std::string &args) {
     setTable["alpha"] = "abcdefghijklmnopqrstuvwxyz";
     setTable["num"] = "0123456789";
     setTable["alphanum"] = "0123456789abcdefghijklmnopqrstuvwxyz";
