@@ -7,8 +7,14 @@
 std::vector<std::string> CGenerator::parseArgs(const std::string &args) {
     std::vector<std::string> result;
     std::string arg;
+    bool readws = false;
+
     for (const char & c : args) {
-        if (c == ' ' && !arg.empty()) {
+        if (c == '"' && !readws)
+            readws = true;
+        if (c == '"' && readws)
+            readws = false;
+        if (c == ' ' && !readws && !arg.empty()) {
             result.emplace_back(std::move(arg));
             arg = "";
         } else {

@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.26)
+cmake_minimum_required(VERSION 3.22)
 project(MockDataGenerator)
 
 set(CMAKE_CXX_STANDARD 17)
@@ -27,4 +27,11 @@ add_executable(MockDataGenerator src/main.cpp
         src/formats/CCommaSeparatedValue.cpp
         src/formats/CCommaSeparatedValue.h
         src/formats/CJson.cpp
-        src/formats/CJson.h)
+        src/formats/CJson.h
+        src/formats/CSingleLine.cpp
+        src/formats/CSingleLine.h
+        src/generators/CAnyOfGenerator.cpp
+        src/generators/CAnyOfGenerator.h
+        src/generators/CFloatGenerator.cpp
+        src/generators/CFloatGenerator.h
+)

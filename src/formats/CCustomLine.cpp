@@ -1,28 +1,17 @@
 #include "CCustomLine.h"
 #include <iostream>
 
-std::vector<std::string> CCustomLine::splitGeneratorLine(const std::string &generatorLine) const {
-    std::vector<std::string> resultGeneratorPrompts;
-    std::string generatorPrompt;
-    for (char i : generatorLine) {
-        if (i == ',') {
-            resultGeneratorPrompts.emplace_back(std::move(generatorPrompt));
-            generatorPrompt.clear();
-        } else {
-            generatorPrompt.append(std::string(1, i));
+std::vector<std::string> CCustomLine::generateOutput() {
+    std::vector<std::string> generatedOutput;
+
+    for (auto i = 0; i < generationCount; i++) {
+        generatedOutput.emplace_back();
+        for (auto & generator : generationPattern) {
+            generatedOutput[i].append(generator->generate());
         }
     }
-    if (!generatorPrompt.empty())
-        resultGeneratorPrompts.emplace_back(std::move(generatorPrompt));
-    return resultGeneratorPrompts;
-}
 
-std::string CCustomLine::generateUnit() {
-    std::string generatedLine;
-    for (auto & generator : generationPattern) {
-        generatedLine.append(generator->generate());
-    }
-    return generatedLine;
+    return generatedOutput;
 }
 
 void CCustomLine::getGeneratorInput(const std::string &formatPrompt) {
@@ -39,15 +28,29 @@ void CCustomLine::getGeneratorInput(const std::string &formatPrompt) {
 void CCustomLine::promptGeneratorInput() {
     bool passed = false;
     while (!passed) {
+        std::cout << "Prompt generators:";
+        std::string input;
+        std::getline(std::cin, input);
         try {
-            std::cout << "Prompt generators:";
-            std::string input;
-            std::cin.ignore();
-            std::getline(std::cin, input);
             getGeneratorInput(input);
-            passed = true;
         } catch (std::exception & e) {
-            std::cout << "Custom Line error: " << e.what() << std::endl;
+            std::cout << "Prompt error: " << e.what() << std::endl;
         }
+        if (generationPattern.empty()) {
+            std::cout << "Prompt at least one generator" << std::endl;
+            continue;
+        }
+        passed = true;
+    }
+
+    passed = false;
+    while (!passed) {
+        std::cout << "Prompt number of generations:";
+        try {
+            std::cin >> generationCount;
+        } catch (...) {
+            std::cout << "Prompt a correct number please" << std::endl;
+        }
+        passed = true;
     }
 }

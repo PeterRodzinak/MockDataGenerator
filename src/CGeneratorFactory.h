@@ -16,6 +16,7 @@ private:
     static std::unique_ptr<CGenerator> createIncrementGenerator(const std::string & spec);
     static std::unique_ptr<CGenerator> createIntGenerator(const std::string & spec);
     static std::unique_ptr<CGenerator> createStringGenerator(const std::string & spec);
+    static std::unique_ptr<CGenerator> createAnyOfGenerator(const std::string & spec);
 public:
     CGeneratorFactory();
     std::unique_ptr<CGenerator> createGenerator(const std::string & generatorPrompt) const;

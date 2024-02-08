@@ -2,14 +2,11 @@
 
 #include "CFormat.h"
 
-class CCustomLine : public CFormat {
-private:
-    std::vector<std::unique_ptr<CGenerator>> generationPattern;
+class CSingleLine : public CFormat{
+    std::unique_ptr<CGenerator> generator;
+    std::string separator;
     std::size_t generationCount;
-
 public:
-    explicit CCustomLine() = default;
-
     void promptGeneratorInput() override;
     void getGeneratorInput(const std::string & formatPrompt) override;
     std::vector<std::string> generateOutput() override;
